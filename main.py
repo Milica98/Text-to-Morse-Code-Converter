@@ -2,8 +2,10 @@ from morse_code_converter import code_text, decode_text
 
 
 def get_option():
-    return input("To start coder type 'C'; \nFor start decoder type 'D'; \nFor EXIT type anything else; \nYour "
-                 "option: ")
+    return input("--> To start encoder type 'C' <--\n"
+                 "--> To start decoder type 'D' <--\n"
+                 "--> To EXIT type anything else <--\n"
+                 "Your option: ")
 
 
 direction = get_option()
