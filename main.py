@@ -15,9 +15,9 @@ def get_option():
 
 def get_output_type(input_text):
     return input(f"\nOriginal text: {input_text}\n"
-                 "--> To get text output type 'T' <--\n"
-                 "--> To get soud output type 'S' <--\n"
-                 "--> To get soud output type 'L' <--\n"
+                 "--> To get Text output type 'T' <--\n"
+                 "--> To get Sound output type 'S' <--\n"
+                 "--> To get Light output type 'L' <--\n"
                  "--> To finish current translation type anything else <--\n"
                  "Your option: ")
 
