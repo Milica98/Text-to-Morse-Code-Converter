@@ -7,11 +7,13 @@ duration_dot = 200  # 200ms
 duration_dash = 600  # 600ms
 duration_delay = 2  # 2s
 
+
 def get_option():
     return input("--> To start encoder type 'C' <--\n"
                  "--> To start decoder type 'D' <--\n"
                  "--> To EXIT type anything else <--\n"
                  "Your option: ")
+
 
 def get_output_type(input_text):
     return input(f"\nOriginal text: {input_text}\n"
@@ -20,6 +22,7 @@ def get_output_type(input_text):
                  "--> To get Light output type 'L' <--\n"
                  "--> To finish current translation type anything else <--\n"
                  "Your option: ")
+
 
 def sound_output(converted_text):
     for c in converted_text:
@@ -30,11 +33,14 @@ def sound_output(converted_text):
         elif c == ' ':
             time.sleep(duration_delay)
 
+
 def cursor_off():
     print('\033[?25l', end="", flush=True)
 
+
 def cursor_on():
     print('\033[?25h', end="", flush=True)
+
 
 def delete_characters(len):
     while len > 0:
@@ -43,12 +49,14 @@ def delete_characters(len):
         len -= 1
     print('', end='', flush=True)
 
+
 def light_on(time_duration):
     print('\u2588' * 5, end='', flush=True)
     time.sleep(time_duration)
 
     delete_characters(5)
     time.sleep(0.5)
+
 
 def light_output(converted_text):
     cursor_off()
@@ -62,6 +70,7 @@ def light_output(converted_text):
             time.sleep(duration_delay)
     time.sleep(1)
     cursor_on()
+
 
 direction = get_option()
 
@@ -85,7 +94,7 @@ while direction in ['C', 'D']:
                 input("Type Enter to continue...")
                 output_type = get_output_type(input_text)
 
-            print('\033c', end='')                
+            print('\033c', end='')
     else:
         try:
             text = decode_text(input_text)

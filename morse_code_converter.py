@@ -1,8 +1,11 @@
 
 from letter_to_morse_mapping import morse_mapper
 
-letter_code_dict = {letter_code_dict['letter']: letter_code_dict['morse'] for letter_code_dict in morse_mapper}
-code_letter_dict = {letter_code_dict['morse']: letter_code_dict['letter'] for letter_code_dict in morse_mapper}
+letter_code_dict = {letter_code_dict['letter']: letter_code_dict['morse']
+                    for letter_code_dict in morse_mapper}
+
+code_letter_dict = {letter_code_dict['morse']: letter_code_dict['letter']
+                    for letter_code_dict in morse_mapper}
 
 
 def get_coded_letter(letter):
@@ -16,7 +19,8 @@ def get_coded_letter(letter):
 
 def code_text(text):
     try:
-        converted_text = ' '.join([get_coded_letter(letter) for letter in text])
+        converted_text = ' '.join([get_coded_letter(letter)
+                                   for letter in text])
     except ValueError as error:
         raise error
     else:
@@ -35,7 +39,8 @@ def get_decoded_letter(letter_code):
 def decode_text(coded_text):
     coded_text_array = coded_text.split(' ')
     try:
-        text = ''.join([get_decoded_letter(coded_letter) for coded_letter in coded_text_array])
+        text = ''.join([get_decoded_letter(coded_letter)
+                        for coded_letter in coded_text_array])
     except ValueError as error:
         raise error
     else:
