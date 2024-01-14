@@ -1,4 +1,4 @@
-from morse_code_converter import code_text, decode_text
+from morse_code_converter import MorseCodeConverter
 import winsound
 import time
 
@@ -72,13 +72,14 @@ def light_output(converted_text):
     cursor_on()
 
 
+converter = MorseCodeConverter()
 direction = get_option()
 
 while direction in ['C', 'D']:
     input_text = input("Type text for conversion: ")
     if direction == 'C':
         try:
-            converted_text = code_text(input_text)
+            converted_text = converter.get_coded_text(input_text)
         except ValueError as error:
             print(error)
         else:
@@ -97,7 +98,7 @@ while direction in ['C', 'D']:
             print('\033c', end='')
     else:
         try:
-            text = decode_text(input_text)
+            text = converter.get_decoded_text(input_text)
         except ValueError as error:
             print(error)
         else:
