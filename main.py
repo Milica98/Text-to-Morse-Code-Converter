@@ -51,10 +51,10 @@ def delete_characters(len):
 
 
 def light_on(time_duration):
-    print('\u2588' * 5, end='', flush=True)
+    print("⚪", end='', flush=True)
     time.sleep(time_duration)
 
-    delete_characters(5)
+    delete_characters(1)
     time.sleep(0.5)
 
 
@@ -103,4 +103,6 @@ while direction in ['C', 'D']:
             print(error)
         else:
             print(f"Decoded text: {text}")
+            input("Type Enter to continue...")
+            print('\033c', end='')
     direction = get_option()
