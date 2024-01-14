@@ -8,6 +8,7 @@ duration_dash = 600  # 600ms
 duration_delay = 2  # 2s
 
 
+
 def get_option():
     return input("--> To start encoder type 'C' <--\n"
                  "--> To start decoder type 'D' <--\n"
